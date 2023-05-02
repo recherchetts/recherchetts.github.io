@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<!-- <link rel="alternate" href="index.xml" type="application/rss+xml" title="Recherche TTS"> -->
+<!-- <link rel="shortcut icon" href="favicon.png" type="image/x-icon" /> -->
+<title>Diffusion Transformer for Adaptive Text-to-Speech</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+			
+		
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">Diffusion Transformer for Adaptive Text-to-Speech</h1>
+
+<!-- <h2 id="abstract">Abstract</h2>
+<p>Abstract.</p> -->
+
+<p><span id="audio-samples" name="audio-samples"></span></p>
+<h2 id="audio-samples">Audio Samples</h2>
+<p><span id="1.1" name="1.1"></span></p>
+<h3 id="general-samples">General TTS</h3>
+
+<h4 id="general-samples-lj">LJSpeech</h4>
+
+<p><em>LJ002-0214</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/vocoder_LJ002-0214.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_LJ002-0214.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_dit_LJ002-0214.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>LJ002-0219</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/vocoder_LJ002-0219.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_LJ002-0219.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_dit_LJ002-0219.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>LJ002-0257</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/vocoder_LJ002-0257.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_LJ002-0257.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_dit_LJ002-0257.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>LJ002-0308</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/vocoder_LJ002-0308.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_LJ002-0308.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_dit_LJ002-0308.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>LJ002-0316</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/vocoder_LJ002-0316.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_LJ002-0316.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lj/pd_dit_LJ002-0316.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+
+<h4 id="general-samples-vctk">VCTK</h4>
+
+<p><em>p316_053</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/vocoder_p316_053.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/pd_p316_053.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/vctk/pd_dit_p316_053.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p317_155</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/vocoder_p317_155.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/pd_p317_155.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/vctk/pd_dit_p317_155.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p341_115</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/vocoder_p341_115.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/pd_p341_115.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/vctk/pd_dit_p341_115.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p364_097</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/vocoder_p364_097.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/pd_p364_097.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/vctk/pd_dit_p364_097.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>s5_017</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">WaveNet</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/vocoder_s5_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/vctk/pd_s5_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/vctk/pd_dit_s5_017.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+
+<h3 id="few-adapt-samples">Few-shot adaptation</h3>
+
+<h4 id="few-adapt-samples-lt2vctk">LibriTTS -> VCTK</h4>
+
+<p><em>p238_018</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/vocoder_p238_018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/as_p238_018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2vctk/pd_dit_p238_018.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p248_017</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/vocoder_p248_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/as_p248_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2vctk/pd_dit_p248_017.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p294_012</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/vocoder_p294_012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/as_p294_012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2vctk/pd_dit_p294_012.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p302_020</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/vocoder_p302_020.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/as_p302_020.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2vctk/pd_dit_p302_020.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p347_004</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/vocoder_p347_004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2vctk/as_p347_004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2vctk/pd_dit_p347_004.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<h4 id="few-adapt-samples-lt2lt">LibriTTS -> LibriTTS</h4>
+
+<p><em>121_127105_000044_000003</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/vocoder_121_127105_000044_000003.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/as_121_127105_000044_000003.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2lt/pd_dit_121_127105_000044_000003.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>237_134500_000025_000004</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/vocoder_237_134500_000025_000004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/as_237_134500_000025_000004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2lt/pd_dit_237_134500_000025_000004.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>2961_961_000004_000008</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/vocoder_2961_961_000004_000008.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/as_2961_961_000004_000008.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2lt/pd_dit_2961_961_000004_000008.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>8455_210777_000024_000005</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/vocoder_8455_210777_000024_000005.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/as_8455_210777_000024_000005.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2lt/pd_dit_8455_210777_000024_000005.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>8555_284449_000038_000000</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">AdaSpeech</th>
+<th style="text-align: center">DiT</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/vocoder_8555_284449_000038_000000.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/lt2lt/as_8555_284449_000038_000000.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/lt2lt/pd_dit_8555_284449_000038_000000.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+
+<h3 id="zero-adapt-samples">Zero-shot adaptation</h3>
+
+<h4 id="zero-adapt-samples-gener">Reference Encoder: GenerSpeech</h4>
+
+<p><em>p238_017</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">Reference mel + HiFi-GAN</th>
+<th style="text-align: center">GenerSpeech</th>
+<th style="text-align: center">DiT</th>
+<th style="text-align: center">WaveNet</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/voc_p238_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/ref_p238_017.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/gs_p238_017.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/dit_p238_017.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/cnn_p238_017.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p245_020</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">Reference mel + HiFi-GAN</th>
+<th style="text-align: center">GenerSpeech</th>
+<th style="text-align: center">DiT</th>
+<th style="text-align: center">WaveNet</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/voc_p245_020.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/ref_p245_020.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/gs_p245_020.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/dit_p245_020.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/cnn_p245_020.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p248_012</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">Reference mel + HiFi-GAN</th>
+<th style="text-align: center">GenerSpeech</th>
+<th style="text-align: center">DiT</th>
+<th style="text-align: center">WaveNet</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/voc_p248_012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/ref_p248_012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/gs_p248_012.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/dit_p248_012.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/cnn_p248_012.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p294_014</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">Reference mel + HiFi-GAN</th>
+<th style="text-align: center">GenerSpeech</th>
+<th style="text-align: center">DiT</th>
+<th style="text-align: center">WaveNet</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/voc_p294_014.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/ref_p294_014.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/gs_p294_014.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/dit_p294_014.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/cnn_p294_014.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><em>p302_003</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">GT mel + HiFi-GAN</th>
+<th style="text-align: center">Reference mel + HiFi-GAN</th>
+<th style="text-align: center">GenerSpeech</th>
+<th style="text-align: center">DiT</th>
+<th style="text-align: center">WaveNet</th>
+</tr></thead><tbody>
+<tr>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/voc_p302_003.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src="../audio/dit/generspeech/ref_p302_003.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/gs_p302_003.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/dit_p302_003.wav autoplay/>Your browser does not support the audio element.</audio></td>
+  <td style="text-align: center"><audio controls="controls" ><source src=../audio/dit/generspeech/cnn_p302_003.wav autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+
+
+</section>
+</article>
+	</main>
+
+
+	
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+
+
+
+</body>
+</html>
