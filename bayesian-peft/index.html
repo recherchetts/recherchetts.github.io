@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<!-- <link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research"> -->
+<!-- <link rel="shortcut icon" href="favicon.png" type="image/x-icon" /> -->
+<title>Bayesian Parameter-Efficient Fine-Tuning for Overcoming Catastrophic Forgetting</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+			
+		
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">Bayesian Parameter-Efficient Fine-Tuning for Overcoming Catastrophic Forgetting</h1>
+        <section itemprop="entry-text">
+            <br>
+<!-- <h2 id="abstract">Abstract</h2>
+<p>Abstract.</p> -->
+
+<p><span id="audio-samples" name="audio-samples"></span></p>
+<h2 id="audio-samples">Audio Samples: Main Results</h2>
+<p><span id="1.1" name="1.1"></span></p>
+      
+<h3 id="p248-samples">Target speaker: p248</h3>
+
+<p><em>p248_031</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0006_p248_031_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0006_p248_031_R_p248_035.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_142</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0009_p248_142_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0009_p248_142_R_p248_364.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_232</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0014_p248_232_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0014_p248_232_R_p248_284.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_116</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0015_p248_116_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0015_p248_116_R_p248_298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_155</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0018_p248_155_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0018_p248_155_R_p248_198.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p225-samples">OOD speaker: p225</h3>
+
+<p><em>p225_201</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0002_p225_201_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0002_p225_201_R_p225_334.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_290</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0005_p225_290_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0005_p225_290_R_p225_287.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_173</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0006_p225_173_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0006_p225_173_R_p225_253.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_220</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0010_p225_220_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0010_p225_220_R_p225_358.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_318</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0013_p225_318_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0013_p225_318_R_p225_156.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p245-samples">OOD speaker: p245</h3>
+
+<p><em>p245_257</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0001_p245_257_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0001_p245_257_R_p245_237.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_315</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0010_p245_315_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0010_p245_315_R_p245_219.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_284</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0013_p245_284_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0013_p245_284_R_p245_037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_233</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0014_p245_233_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0014_p245_233_R_p245_010.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_068</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0019_p245_068_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0019_p245_068_R_p245_218.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p261-samples">OOD speaker: p261</h3>
+
+<p><em>p261_278</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0000_p261_278_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0000_p261_278_R_p261_281.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_130</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0003_p261_130_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0003_p261_130_R_p261_149.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_325</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0007_p261_325_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0007_p261_325_R_p261_416.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_113</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0016_p261_113_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0016_p261_113_R_p261_195.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_133</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0017_p261_133_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0017_p261_133_R_p261_290.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p302-samples">OOD speaker: p302</h3>
+
+<p><em>p302_116</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0001_p302_116_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0001_p302_116_R_p302_158.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_067</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0006_p302_067_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0006_p302_067_R_p302_260.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_198</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0007_p302_198_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0007_p302_198_R_p302_252.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_167</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0013_p302_167_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0013_p302_167_R_p302_135.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_079</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">Pre-trained</th>
+<th style="text-align: center">Full</th>
+<th style="text-align: center">Linear</th>
+<th style="text-align: center">LoRA</th>
+<th style="text-align: center">LoRA+EWC</th>
+<th style="text-align: center">LoRA+KFAC</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0016_p302_079_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0016_p302_079_R_p302_156.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/pretrained/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/full/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/linear/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/lora/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h2 id="audio-samples-2">Audio Samples: Varying Regularization Strength</h2>
+<p><span id="1.1" name="1.1"></span></p>
+<h3 id="p248-samples">Target speaker: p248</h3>
+
+<p><em>p248_031</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0006_p248_031_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0006_p248_031_R_p248_035.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p248/0006_p248_031_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_142</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0009_p248_142_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0009_p248_142_R_p248_364.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p248/0009_p248_142_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_232</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0014_p248_232_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0014_p248_232_R_p248_284.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p248/0014_p248_232_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_116</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0015_p248_116_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0015_p248_116_R_p248_298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p248/0015_p248_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p248_155</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p248/0018_p248_155_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p248/0018_p248_155_R_p248_198.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p248/0018_p248_155_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p225-samples">OOD speaker: p225</h3>
+
+<p><em>p225_201</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0002_p225_201_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0002_p225_201_R_p225_334.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p225/0002_p225_201_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_290</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0005_p225_290_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0005_p225_290_R_p225_287.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p225/0005_p225_290_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_173</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0006_p225_173_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0006_p225_173_R_p225_253.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p225/0006_p225_173_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_220</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0010_p225_220_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0010_p225_220_R_p225_358.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p225/0010_p225_220_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p225_318</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p225/0013_p225_318_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p225/0013_p225_318_R_p225_156.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p225/0013_p225_318_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p245-samples">OOD speaker: p245</h3>
+
+<p><em>p245_257</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0001_p245_257_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0001_p245_257_R_p245_237.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p245/0001_p245_257_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_315</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0010_p245_315_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0010_p245_315_R_p245_219.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p245/0010_p245_315_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_284</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0013_p245_284_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0013_p245_284_R_p245_037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p245/0013_p245_284_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_233</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0014_p245_233_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0014_p245_233_R_p245_010.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p245/0014_p245_233_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p245_068</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p245/0019_p245_068_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p245/0019_p245_068_R_p245_218.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p245/0019_p245_068_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p261-samples">OOD speaker: p261</h3>
+
+<p><em>p261_278</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0000_p261_278_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0000_p261_278_R_p261_281.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p261/0000_p261_278_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_130</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0003_p261_130_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0003_p261_130_R_p261_149.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p261/0003_p261_130_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_325</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0007_p261_325_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0007_p261_325_R_p261_416.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p261/0007_p261_325_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_113</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0016_p261_113_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0016_p261_113_R_p261_195.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p261/0016_p261_113_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p261_133</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p261/0017_p261_133_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p261/0017_p261_133_R_p261_290.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p261/0017_p261_133_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+
+
+
+
+
+
+
+<h3 id="p302-samples">OOD speaker: p302</h3>
+
+<p><em>p302_116</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0001_p302_116_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0001_p302_116_R_p302_158.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p302/0001_p302_116_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_067</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0006_p302_067_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0006_p302_067_R_p302_260.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p302/0006_p302_067_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_198</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0007_p302_198_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0007_p302_198_R_p302_252.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p302/0007_p302_198_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_167</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0013_p302_167_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0013_p302_167_R_p302_135.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p302/0013_p302_167_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+        
+
+<p><em>p302_079</em></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Ground Truth</th>
+<th style="text-align: center">Reference</th>
+<th style="text-align: center">EWC: 1E2</th>
+<th style="text-align: center">EWC: 1E3</th>
+<th style="text-align: center">EWC: 1E4</th>
+<th style="text-align: center">KFAC: 1E2</th>
+<th style="text-align: center">KFAC: 1E3</th>
+<th style="text-align: center">KFAC: 1E4</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/gt/p302/0016_p302_079_G.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ref/p302/0016_p302_079_R_p302_156.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e2/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/ewc_1e4/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e2/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/bayesian-peft/kfac_1e4/p302/0016_p302_079_P.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+
+</section>
+</article>
+</main>
+
+
+	
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+
+
+
+</body>
+</html>
