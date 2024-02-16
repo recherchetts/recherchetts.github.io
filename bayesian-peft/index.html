@@ -30,8 +30,18 @@
             <h1 class="entry-title" itemprop="headline">Bayesian Parameter-Efficient Fine-Tuning for Overcoming Catastrophic Forgetting</h1>
         <section itemprop="entry-text">
             <br>
-<!-- <h2 id="abstract">Abstract</h2>
-<p>Abstract.</p> -->
+
+<h2 id="authors">Authors</h2>
+<ul>
+<li>Haolin Chen (Idiap Research Institute, EPFL) <a href="mailto:haolin.chen@idiap.ch">haolin.chen@idiap.ch</a></li>
+<li>Philip N. Garner (Idiap Research Institute) <a href="mailto:phil.garner@idiap.ch">phil.garner@idiap.ch</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+<p>Although motivated by the adaptation of text-to-speech synthesis models, we argue that more generic parameter-efficient fine-tuning (PEFT) is an appropriate framework to do such adaptation. However, catastrophic forgetting remains an issue with PEFT, damaging the pre-trained model's inherent capabilities. We demonstrate that existing Bayesian learning techniques can be applied to PEFT to prevent catastrophic forgetting as long as the parameter shift of the fine-tuned layers can be calculated differentiably. In a principled series of experiments on language modeling and speech synthesis tasks, we utilize established Laplace approximations, including diagonal and Kronecker factored approaches, to regularize PEFT with the low-rank adaptation (LoRA) and compare their performance in pre-training knowledge preservation. Our results demonstrate that catastrophic forgetting can be overcome by our methods without degrading the fine-tuning performance, and using the Kronecker factored approximations produces a better preservation of the pre-training knowledge than the diagonal ones.</p>
+
+<h2 id="code">Source Code</h2>
+Open source in administrative process.
 
 <p><span id="audio-samples" name="audio-samples"></span></p>
 <h2 id="audio-samples">Audio Samples: Main Results</h2>
