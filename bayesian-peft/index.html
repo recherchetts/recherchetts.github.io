@@ -40,9 +40,13 @@
 <h2 id="abstract">Abstract</h2>
 <p>Although motivated by the adaptation of text-to-speech synthesis models, we argue that more generic parameter-efficient fine-tuning (PEFT) is an appropriate framework to do such adaptation. However, catastrophic forgetting remains an issue with PEFT, damaging the pre-trained model's inherent capabilities. We demonstrate that existing Bayesian learning techniques can be applied to PEFT to prevent catastrophic forgetting as long as the parameter shift of the fine-tuned layers can be calculated differentiably. In a principled series of experiments on language modeling and speech synthesis tasks, we utilize established Laplace approximations, including diagonal and Kronecker factored approaches, to regularize PEFT with the low-rank adaptation (LoRA) and compare their performance in pre-training knowledge preservation. Our results demonstrate that catastrophic forgetting can be overcome by our methods without degrading the fine-tuning performance, and using the Kronecker factored approximations produces a better preservation of the pre-training knowledge than the diagonal ones.</p>
 
-<h2 id="correction">Correction</h2>
-<li>Eq. 9 & 10: there should be no transpose on the delta weight, $(A_l \otimes G_l) \mathtt{vec}(\Delta W_l) = \mathtt{vec}(G_l \Delta W_l A_l).$</li>
+<h2 id="correction">Corrections</h2>
+<li>Eq. 9 & 10: there should be no transposition on the delta weight, $(A_l \otimes G_l) \mathtt{vec}(\Delta W_l) = \mathtt{vec}(G_l \Delta W_l A_l)$.</li>
 <li>Paragraph following Eq. 10: The storage cost for $A_l$ and $G_l$ of a linear layer with the dimensions of $W_l$ being $(d_o, d_i)$ is $(d_o^2+d_i^2+d_o+d_i)/2$ given the symmetry of the matrices, while the memory consumption is $d_o^2+d_i^2$, both of which are generally higher compared to EWC.</li>
+<li>Last paragraph in Section IV: We also note that other PEFT methods that do not explicitly calculate the delta weight also fit in the framework, such as $(\mathtt{IA})^3$ and Orthogonal Butterfly, although regularizing these methods may require extra computation and memory.</li>
+<li>Section VI.C.Hessian estimation: Based on the experience from language modeling experiments, we randomly sample <b>1,000</b> utterances from the train-clean-360 subset of the LibriTTS dataset for Hessian estimation to ensure accuracy.</li>
+<li>Section VI.C.Training and inference: The rank and the scaling factor of LoRA are set to 16 and 2 respectively, resulting in an overall percentage of trainable parameters of <b>1.579%</b>.</li>
+
 
 <h2 id="code">Source Code</h2>
 GitHub: <a href="https://github.com/idiap/bayesian-peft" target="_blank">https://github.com/idiap/bayesian-peft</a>
