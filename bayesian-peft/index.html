@@ -44,6 +44,7 @@
 <li>Eq. 9 & 10: there should be no transposition on the delta weight, $(A_l \otimes G_l) \mathtt{vec}(\Delta W_l) = \mathtt{vec}(G_l \Delta W_l A_l)$.</li>
 <li>Paragraph following Eq. 10: The storage cost for $A_l$ and $G_l$ of a linear layer with the dimensions of $W_l$ being $(d_o, d_i)$ is $(d_o^2+d_i^2+d_o+d_i)/2$ given the symmetry of the matrices, while the memory consumption is $d_o^2+d_i^2$, both of which are generally higher compared to EWC.</li>
 <li>Last paragraph in Section IV: We also note that other PEFT methods that do not explicitly calculate the delta weight also fit in the framework, such as $(\mathtt{IA})^3$ and Orthogonal Butterfly, although regularizing these methods may require extra computation and memory.</li>
+<li>For language modeling tasks, the <b>validation sets</b> were used for evaluation instead of the test sets.</li>
 <li>Section VI.C.Hessian estimation: Based on the experience from language modeling experiments, we randomly sample <b>1,000</b> utterances from the train-clean-360 subset of the LibriTTS dataset for Hessian estimation to ensure accuracy.</li>
 <li>Section VI.C.Training and inference: The rank and the scaling factor of LoRA are set to 16 and 2 respectively, resulting in an overall percentage of trainable parameters of <b>1.579%</b>.</li>
 
